@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caravan Market is a fictional online store built as a front-end portfolio project.">
+    <title>Caravan Market | Portfolio Demo Store</title>
+    <meta name="theme-color" content="#0f1111">
+    <meta property="og:title" content="Caravan Market | Portfolio Demo Store">
+    <meta property="og:description" content="A fictional online store built with HTML, CSS and vanilla JavaScript: product search, category filters, sorting and a persistent shopping cart.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f1111'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='%23f08804'%3EC%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#products" class="skip-link">Skip to products</a>
+
+    <header id="top">
+        <div class="navbar">
+            <a href="#top" class="logo hover-border" aria-label="Caravan Market home">CARAVAN</a>
+
+            <div class="nav-address hover-border">
+                <p class="dispatch">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="country">United Kingdom</p>
+                </div>
+            </div>
+
+            <div class="nav-search" role="search">
+                <select class="search-select" id="category-select" aria-label="Search category">
+                    <option value="all">All</option>
+                </select>
+                <input type="search" placeholder="Search Caravan Market" class="search-input" id="search-input" aria-label="Search products">
+                <button type="button" class="search-icon" id="search-button" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="nav-signin hover-border">
+                <p class="nav-small">Hello, guest</p>
+                <p class="nav-second">Account &amp; Lists</p>
+            </div>
+
+            <div class="nav-return hover-border">
+                <p class="nav-small">Returns</p>
+                <p class="nav-second">&amp; Orders</p>
+            </div>
+
+            <button type="button" class="nav-cart hover-border" id="cart-button" aria-label="Cart, 0 items">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count" id="cart-count">0</span>
+                Cart
+            </button>
+        </div>
+
+        <nav class="panel">
+            <div class="panel-all hover-border">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="panel-ops">
+                <a href="#" class="hover-border">Today's Deals</a>
+                <a href="#" class="hover-border">New Arrivals</a>
+                <a href="#" class="hover-border">Best Sellers</a>
+                <a href="#" class="hover-border">Customer Service</a>
+                <a href="#" class="hover-border">Gift Cards</a>
+            </div>
+            <div class="panel-deals hover-border">
+                <p>Free delivery over £50</p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Everyday essentials, delivered simply</h1>
+                <p>Clothing, tech, home, beauty and more, all in one place.</p>
+                <a href="#products" class="hero-button">Start shopping</a>
+            </div>
+            <div class="hero-message">
+                Caravan Market is a fictional demo store built for a portfolio. No real orders or payments are processed.
+            </div>
+        </section>
+
+        <section class="category-grid" id="categories">
+            <article class="box" data-category="clothing">
+                <div class="box-content">
+                    <h2>Clothing</h2>
+                    <img class="box-img" src="images/categories/clothing.jpg" alt="Folded t-shirt, chinos, jacket and sweater">
+                    <a href="#products" class="box-link">See more</a>
+                </div>
+            </article>
+
+            <article class="box" data-category="health">
+                <div class="box-content">
+                    <h2>Health &amp; Personal Care</h2>
+                    <img class="box-img" src="images/categories/health.jpg" alt="Toothbrush, skincare bottles and grooming accessories">
+                    <a href="#products" class="box-link">See more</a>
+                </div>
+            </article>
+
+            <article class="box" data-category="furniture">
+                <div class="box-content">
+                    <h2>Furniture</h2>
+                    <img class="box-img" src="images/categories/furniture.jpg" alt="Armchair and wooden side table with a lamp">
+                    <a href="#products" class="box-link">See more</a>
+                </div>
+            </article>
+
+            <article class="box" data-category="electronics">
+                <div class="box-content">
+                    <h2>Electronics</h2>
+                    <img class="box-img" src="images/categories/electronics.jpg" alt="Headphones, tablet, phone and charging accessories">
+                    <a href="#products" class="box-link">See more</a>
+                </div>
+            </article>
+
+            <article class="box" data-category="beauty">
+                <div class="box-content">
+                    <h2>Beauty Picks</h2>
+                    <img class="box-img" src="images/categories/beauty.jpg" alt="Makeup brushes, eyeshadow palette and lipstick">
+                    <a href="#products" class="box-link">See more</a>
+                </div>
+            </article>
+
+            <article class="box" data-category="pets">
+                <div class="box-content">
+                    <h2>Pet Care</h2>
+                    <img class="box-img" src="images/categories/pets.jpg" alt="Pet bed, scratching post and other pet accessories">
+                    <a href="#products" class="box-link">See more</a>
+                </div>
+            </article>
+
+            <article class="box" data-category="toys">
+                <div class="box-content">
+                    <h2>Toys &amp; Games</h2>
+                    <img class="box-img" src="images/categories/toys.jpg" alt="Teddy bear, wooden blocks and a remote control car">
+                    <a href="#products" class="box-link">See more</a>
+                </div>
+            </article>
+
+            <article class="box" data-category="fashion">
+                <div class="box-content">
+                    <h2>Fashion Trends</h2>
+                    <img class="box-img" src="images/categories/fashion.jpg" alt="Straw hat, sunglasses, jewellery and a handbag">
+                    <a href="#products" class="box-link">See more</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="products-section" id="products">
+            <div class="products-header">
+                <div>
+                    <h2 id="products-title">All products</h2>
+                    <p class="results-count" id="results-count" aria-live="polite"></p>
+                </div>
+                <div class="sort-box">
+                    <label for="sort-select">Sort by</label>
+                    <select class="sort-select" id="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                        <option value="rating">Top rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="category-chips" id="category-chips"></div>
+
+            <div class="product-grid" id="product-grid"></div>
+
+            <noscript>
+                <p class="noscript-message">Caravan Market needs JavaScript to show its products. Please turn it on and refresh the page.</p>
+            </noscript>
+
+            <div class="empty-state" id="empty-state" hidden>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No products found</h3>
+                <p>Try a different search word or choose another category.</p>
+                <button type="button" class="clear-filters" id="clear-filters">Clear filters</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="foot-pan1">
+            <a href="#top">Back to top</a>
+        </div>
+
+        <div class="foot-pan2">
+            <div class="foot-col">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">Our Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="foot-col">
+                <h3>Connect with Us</h3>
+                <ul>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="foot-col">
+                <h3>Work with Us</h3>
+                <ul>
+                    <li><a href="#">Sell on Caravan Market</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+
+            <div class="foot-col">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Returns Centre</a></li>
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="foot-pan3">
+            <a href="#top" class="logo" aria-label="Back to top">CARAVAN</a>
+        </div>
+
+        <div class="foot-pan4">
+            <div class="pages">
+                <a href="#">Conditions of Use &amp; Sale</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Cookie Preferences</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Caravan Market. A fictional store built for portfolio purposes.
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="cart-header">
+            <h2 id="cart-title">Your cart</h2>
+            <button type="button" class="cart-close" id="cart-close" aria-label="Close cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-empty" id="cart-empty" hidden>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h3>Your cart is empty</h3>
+            <p>Add something you like and it will show up here.</p>
+            <button type="button" class="continue-shopping" id="continue-shopping">Continue shopping</button>
+        </div>
+
+        <ul class="cart-items" id="cart-items"></ul>
+
+        <div class="cart-summary" id="cart-summary" hidden>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal"></span>
+            </div>
+            <div class="summary-row">
+                <span>Delivery</span>
+                <span id="cart-delivery"></span>
+            </div>
+            <div class="summary-row summary-total">
+                <span>Total</span>
+                <span id="cart-total"></span>
+            </div>
+            <p class="delivery-note" id="delivery-note"></p>
+            <button type="button" class="checkout-button" id="checkout-button">Checkout</button>
+            <p class="checkout-message" id="checkout-message" hidden>
+                This is a demo store, so no order was placed and no payment was taken.
+            </p>
+        </div>
+    </aside>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
